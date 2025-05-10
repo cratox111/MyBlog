@@ -26,10 +26,11 @@ class Users(db.Model):
     email = db.Column(db.String(100))
     password = db.Column(db.String(100))
 
-    tareas = db.relationship('Post', backref='users', lazy=True)
+    tareas = db.relationship('Task', backref='users', lazy=True)
 
-class Post(db.Model):
+class Task(db.Model):
     id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(200), nullable=False)
     descripcion = db.Column(db.String(200), nullable=False)
 
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
@@ -53,16 +54,17 @@ def InicioUsuario():
     name = session['username']
 
     if request.method == 'POST':
-        post = request.form['post']
+        title_task = request.form['title_task']
+        task_des = request.form['task_des']
 
-        if not post == "":
-            nueva_tarea = Post(descripcion=post, users_id=user_id)
+        if not title_task == "":
+            nueva_tarea = Task(title=title_task, descripcion=task_des, users_id=user_id)
             db.session.add(nueva_tarea)
             db.session.commit()
 
 
 
-    tareas = Post.query.filter_by(users_id=user_id).all()
+    tareas = Task.query.filter_by(users_id=user_id).all()
     return render_template('InicioUsuario.html', tareas=tareas, username=name, date=current_date)
 
 @app.route('/register', methods=["GET", "POST"])
@@ -137,6 +139,8 @@ def Logout():
     session.clear()  # Limpia toda la sesión
     return redirect(url_for('Login'))
 
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True)
+    #port = int(os.environ.get("PORT", 5000))
+    #app.run(host='0.0.0.0', port=port, debug=True)

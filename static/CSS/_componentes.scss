@@ -62,17 +62,14 @@
 
 .menu {
     display: flex;
-    width: 100vw;
-    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 97.5vw;
+    height: 20px;
     padding: 2.5px;
+    padding-left: 8px;
+    padding-right: 8px;
     background-color: #d8d8d8;
-    h1 {
-        display: flex;
-        width: 100vw;
-        height: auto;
-        padding: 2.5px;
-        justify-content: center;
-    }
 }
 
 .container-post {

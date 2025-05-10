@@ -7,25 +7,33 @@
 </head>
 <body>
     <section class='menu'>
-        <h1>My Blog</h1>
+        <h1>Mis Tareas</h1>
         <a href="{{ url_for('Logout') }}" class='btn-main'>Cerrar sesión</a>
     </section>
     <main>
         <div class='container-create-post'>
             <form method='POST'>
-                <input class='bar-text' type='text' name='post'>
+                <div>
+                    <label class='min-label'>Tarea</label><br>
+                    <input class='bar-text' type='text' name='title_task'>
+                </div>
+                <div>
+                    <label class='min-label'>Descripcion</label><br>
+                    <input class='bar-text' type='text' name='task_des'>
+                </div>
                 <button class='btn-main' type='submit'>Publicar</button>
-            <form>
+            </form>
         </div>
         <ul>
           {% for tarea in tareas %}
             <li>
                 <div class='container-post'>
                     <div>
-                        <p>{{username}}</p>
+                        <p>{{tarea.title}}</p>
                         <p>{{date}}</p>
                     </div>
                     <p>{{ tarea.descripcion }}</p>
+                    <a >Terminada</a>
                 </div>
             </li>
           {% else %}
