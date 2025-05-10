@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InicioUsuario</title>
+    <link rel='stylesheet' href='../static/CSS/InicioUsuario/style.css' />
+    
+</head>
+<body>
+    <section class='menu'>
+        <h1>My Blog</h1>
+        <a href="{{ url_for('Logout') }}" class='btn-main'>Cerrar sesión</a>
+    </section>
+    <main>
+        <div class='container-create-post'>
+            <form method='POST'>
+                <input class='bar-text' type='text' name='post'>
+                <button class='btn-main' type='submit'>Publicar</button>
+            <form>
+        </div>
+        <ul>
+          {% for tarea in tareas %}
+            <li>
+                <div class='container-post'>
+                    <div>
+                        <p>{{username}}</p>
+                        <p>{{date}}</p>
+                    </div>
+                    <p>{{ tarea.descripcion }}</p>
+                </div>
+            </li>
+          {% else %}
+            <li>No has posteado nada aún.</li>
+          {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

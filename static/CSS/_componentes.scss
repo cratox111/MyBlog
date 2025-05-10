@@ -1,0 +1,93 @@
+.btn-main {
+    background-color: #0066ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 2.5px;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.btn-secundary {
+    color: #000000;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.btn-main-grey {
+    background-color: #e5e5e5;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 2.5px;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.bar-text {
+    width: 82.5%;
+    border: solid 1px #a8a8a8;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    outline: none;
+    padding: 2.5px;
+}
+
+.min-label {
+    font-weight: 800;
+    font-size: 5px;
+}
+
+.min-text {
+    font-weight: 500;
+    font-size: 4px;
+    color: #a8a8a8;
+}
+
+.link {
+    font-weight: 500;
+    font-size: 4px;
+    color: #d900ff;
+}
+
+
+
+.container-create-post {
+    width: 50%;
+    padding: 5px;
+    background-color: #d8d8d8;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.menu {
+    display: flex;
+    width: 100vw;
+    height: auto;
+    padding: 2.5px;
+    background-color: #d8d8d8;
+    h1 {
+        display: flex;
+        width: 100vw;
+        height: auto;
+        padding: 2.5px;
+        justify-content: center;
+    }
+}
+
+.container-post {
+    width: 50vw;
+    padding: 5px;
+    background-color: #d8d8d8;
+    border-radius: 5px;
+    margin: 5px;
+    gap: 2.5;
+    font-size: 7.5px;
+    font-weight: 300;
+    div {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        font-weight: 500;
+    }
+}
